@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+{% block body %}
+  {% if session.logged_in %}
+    <ul class=entries>
+    {% for entry in entries %}
+      <li><strong>@{{entry.username}}</strong><br> {{entry.body | safe}}
+          <img src="{{entry.media}}"></li><br>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endblock %}

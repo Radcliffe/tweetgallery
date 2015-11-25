@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<div class="flexslider">
+  <ul class="slides">
+    {% for entry in entries %}
+    <li>
+      <img src="{{entry.media}}" height="400" />
+      <p class="flex-caption">
+         <strong>@{{entry.username}}</strong>
+         {{entry.body | safe}}</p>
+    </li>
+    {% endfor %}
+  </ul>
+</div>
+
+{% endblock %}
